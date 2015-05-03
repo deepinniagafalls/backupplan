@@ -1,5 +1,6 @@
 package code;
 import java.util.ArrayList;
+import java.util.Random;
 import java.awt.Color;
 public class Player {
 
@@ -15,6 +16,16 @@ public class Player {
 		_scrabble = s;
 		_inv = _scrabble.getInventory();
 		_tr = new TileRack();
+		Random random = new Random();
+		float hue = random.nextFloat();
+		float saturation = (random.nextFloat() * 1.0f) + 0.6f;
+		float luminance = (random.nextFloat() * 1.1f) + 0.7f; 
+		_color = Color.getHSBColor(hue, saturation, luminance);
+
+	}
+	public Color getC(){
+		return _color;
+		
 	}
 	
 
