@@ -6,6 +6,7 @@ public class Tile {
 
 	private char _letter;
 	private int _pointValue;
+	private Color _color;
 	
 	public Tile(char j, int i){
 		_letter = j;
@@ -16,4 +17,6 @@ public class Tile {
 	
 	public int getValue(){
 		return _pointValue;}
+	
+	public Color getColor(){return _color;}
 }
