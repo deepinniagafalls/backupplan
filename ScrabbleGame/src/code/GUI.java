@@ -19,11 +19,11 @@ public class GUI extends JFrame {
 	private ArrayList<RackGUI> _rackGUI;
 	
 	public GUI(Scrabble s){
-		 try {
-	            UIManager.setLookAndFeel(new com.sun.java.swing.plaf.motif.MotifLookAndFeel());
-	        } catch(Exception e) {
-	            e.printStackTrace();
-	        }
+		// try {
+	         //   UIManager.setLookAndFeel(new com.sun.java.swing.plaf.motif.MotifLookAndFeel());
+	       // } catch(Exception e) {
+	      //      e.printStackTrace();
+	      //  } 
 		_scrabble = s;
 		_b = _scrabble.getBoard();
 		JFrame frame = new JFrame("Scrabble");	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
