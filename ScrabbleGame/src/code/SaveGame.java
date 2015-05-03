@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -43,40 +43,35 @@ public class SaveGame {
 			
 			for(int i = 0; i <_scrabble.getNumberofPlayers(); i = i + 1 ){
 				Player p = _scrabble.getPlayer(i);
-				p.getScore();
-				p.getColor();
-				PlayerFrame_047 pf = _bf.getPlayerFrame(i);
 				bw.write("[" +p.getColor() + ", " + p.getScore() + "]");
-				
 				bw.write("%");
 				bw.write("[");
 				for(int j = 0; j <12; j = j+1){
-					pf.getPlayerSpace(j).getTile().getChar();
-					bw.write(pf.getPlayerSpace(j).getTile().getChar());
+					bw.write(p.getTileRack().getTile(j).getChar());
 				}
 				bw.write("]");
 				bw.write("%");
 			}
 			
-			int turn = _bf.getGame().getCurrentTurn();
+			int turn = _scrabble.getTurn();
 			
 			bw.write(" " + turn);
 			bw.write("%");
 			
-			for(int i = 0; i < _scrabble.getInv().getSize(); i = i + 1 ){
-				bw.write("[" + _scrabble.getInv().getTile(i).getChar() + "]");
+			for(int i = 0; i < _scrabble.getInventory().getSize(); i = i + 1 ){
+				bw.write("[" + _scrabble.getInventory().getTile(i).getChar() + "]");
 			}
 			bw.write("%");
 			
 			for(int i = 0; i<20; i = i + 1){
 				for(int j = 0; j<20; j = j +1){
-					if(_b.getTile(i, j) == null){
+					if(_scrabble.getBoard().getTile(i, j) == null){
 						bw.write("-");
 					}
 					else{
-						_b.getTile(i, j).getChar();
+						_scrabble.getBoard().getTile(i, j).getChar();
 						_bf.getTileSpace(i,j).getColor();
-						bw.write("[" + _b.getTile(i, j).getChar() +  ", " + _bf.getTileSpace(i,j).getColor() + "]");
+						bw.write("[" + _scrabble.getBoard().getTile(i, j).getChar() +  ", " + _scrabble.getBoard().getTile(i, j).getColor() + "]");
 					}
 					
 				}

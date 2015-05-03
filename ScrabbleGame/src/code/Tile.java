@@ -1,5 +1,7 @@
 package code;
 
+import java.awt.Color;
+
 public class Tile {
 
 	private char _letter;
