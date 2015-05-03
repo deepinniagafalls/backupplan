@@ -34,6 +34,7 @@ public class Board {
 	}
 
 	public Tile getTile(int x, int y){return _board[x][y];}
+	public void setTile(Tile t, int x, int y){_board[x][y] = t;} 
 	public void setTempTile(Tile t){_tempTile = t;}
 	public Tile getTempTile(){return _tempTile;}
 	public int getLetterMultiplier(int index){return _letterMultipliers[index];}
