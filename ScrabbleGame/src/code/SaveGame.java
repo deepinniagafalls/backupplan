@@ -70,7 +70,7 @@ public class SaveGame {
 					}
 					else{
 						_scrabble.getBoard().getTile(i, j).getChar();
-						_bf.getTileSpace(i,j).getColor();
+						_scrabble.getBoard().getTile(i,j).getColor();
 						bw.write("[" + _scrabble.getBoard().getTile(i, j).getChar() +  ", " + _scrabble.getBoard().getTile(i, j).getColor() + "]");
 					}
 					
