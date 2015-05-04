@@ -54,7 +54,7 @@ public class Player {
 		
 		
 		public void boardClicked(int index){
-			//if(_scrabble.getBoard().getCurrent())
+			if(_scrabble.getBoard().getCurrent())
 		}
 	}
 }
