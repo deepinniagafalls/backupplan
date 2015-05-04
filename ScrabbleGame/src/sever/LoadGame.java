@@ -1,4 +1,4 @@
-package code;
+package sever;
 
 import java.awt.FileDialog;
 import java.io.BufferedReader;
@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.awt.Color;
 
 import javax.swing.JFrame;
-
-import sever.Scrabble;
 
 public class LoadGame {	
 	
@@ -95,18 +93,6 @@ public class LoadGame {
 		}
 	}
 
-	
-	public void updateInventory(){
-		Inventory inv = _scrabble.getInventory();
-		String inventoryData = _tokens[4];
-		String allTiles = inventoryData.replace("[", "");
-		allTiles = allTiles.replace("]", "");
-		inv.resetTileBag();
-		for(int i = 0; i< allTiles.length();i++){
-			
-		}
-		
-	}
 	/*
 		String[] tokens = s.split(delims);
 		
