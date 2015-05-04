@@ -28,13 +28,17 @@ public class Player {
 		}
 	
 	public TileRack getTileRack(){return  _tr;}
-	
-
+	public String getName(){return _name;}
+	public int getScore(){return _score;}
+	public void setName(String name){_name = name;}
+	public Color getColor(){return _color;}
+	public void setColor(Color color){_color = color;}
 	
 	public class TileRack {
 		
 		private ArrayList<Tile> _rack;
-		private int _lastClick;
+		private int _lastClick, _currentClick;
+		private boolean _firstTime;
 	
 		public TileRack(){
 			_rack = new ArrayList<Tile>();
@@ -47,29 +51,38 @@ public class Player {
 		public Tile removeTile(int i){return _rack.remove(i);}
 		public int getSize() {return _rack.size();}
 		public Tile getTile(int i){return _rack.get(i);}
-		public int getScore(){return _score;}
-		public String getName(){return _name;}
-		public void setName(String name){_name = name;}
-		public Color getColor(){return _color;}
-		public void setColor(Color color){_color = color;}
+		
 		
 		
 		public void boardClicked(int index){
-			_lastClick = index;
-			if(_scrabble.getBoard().getCurrentTile() != null){
-				for(int i = 0; i < _rack.size(); i++){
-					if(_rack.get(i) == null){
-						Tile temp = _rack.get(index);
-						_rack.set(index, _rack.get(i,_scrabble.getBoard().getCurrentTile()));
-						_rack.set(i, )
-						_scrabble.getBoard().getCurrentTile();
-						
-					}
-				}
+			/*
+			if(_firstTime == true){
+				_firstTime = false;
+				_currentClick = index;
+				_scrabble.getBoard().setCurrentTile(_rack.get(index));
 			}
 			
-
-		}
-	}
+			_lastClick = _currentClick;
+			_currentClick = index;
+			*/
+			
+			Tile currentTile = _scrabble.getBoard().getCurrentTile();
+			
+			if(currentTile == null){
+				_currentClick = index;
+				_scrabble.getBoard().setCurrentTile(currentTile);
+				_rack.set(index, null);
+			}	
+			else if(currentTile != null){
+				_lastClick = _currentClick;
+				_currentClick = index;
+			
+				_rack.set(_lastClick, _rack.get(_currentClick));
+				_rack.set(_currentClick, currentTile);
+				}
+			
+			}
+		
+			}
 }
 

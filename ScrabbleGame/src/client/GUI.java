@@ -85,13 +85,14 @@ public class GUI extends JFrame implements IClient, Runnable {
 	}
 
 	private class RackTileGUI extends JButton {
-		private int _row,_col,_letterMult,_wordMult,_index;
-		private RackTileGUI(int row, int col, int letterMult, int wordMult){
-			_row = row; _col = col; _letterMult = letterMult; _wordMult = wordMult;
+		private int _index;
+		private RackTileGUI(int index){
+			_index = index;
 		}
 		
 		public void actionPerformed(ActionEvent e) {
 			_scrabble.getPlayer(_scrabble.getTurn()).getTileRack().boardClicked(_index);
+			_gui.update();
 		}
 	}
 	
@@ -121,7 +122,7 @@ public class GUI extends JFrame implements IClient, Runnable {
 				GridLayout grid = new GridLayout(1, 0, 0, 0); frame.setLayout(grid);
 				int row = 0;
 				for(int col=0; col<12; col++){
-					frame.add(_rackOfButtons[row][col] = new RackTileGUI(row, col, 1, 1));
+					frame.add(_rackOfButtons[row][col] = new RackTileGUI(col));
 				}
 				frame.setTitle(_player.getName() + "'s Tile Rack"); frame.setVisible(true);
 		}
@@ -204,6 +205,7 @@ public class GUI extends JFrame implements IClient, Runnable {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					_scrabble.switchTurn();
+					//call word checker;
 				}
 
 				

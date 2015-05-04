@@ -11,7 +11,7 @@ public class Driver {
 		ServerCode s = new ServerCode(2);
 		GUI g = new GUI(s);
 		g.update();
-		SaveGame sg = new SaveGame(s);
+		//SaveGame sg = new SaveGame(s);
 		//LoadGame lg = new LoadGame();
 	}
 	
