@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.awt.Color;
 import javax.swing.JFrame;
 
 public class LoadGame {	
@@ -74,7 +74,21 @@ public class LoadGame {
 		for(int i = 0; i < numOfPlayers; i++){
 			String[] info = playerList[i].split(",");
 			_scrabble.getPlayer(i).setName(info[0]);
-			_scrabble.getPlayer(i).setColor(info[1]);
+			
+			String colorInputs = info[1].replace("java.awt.Color[", "");
+			colorInputs = colorInputs.replace("r=", "");
+			colorInputs = colorInputs.replace("b=", "");
+			colorInputs = colorInputs.replace("g=", "");
+			colorInputs = colorInputs.replace("]", "");
+			
+			String [] numbers = colorInputs.split(",");
+			int red = Integer.parseInt(numbers[0]);
+			int blue = Integer.parseInt(numbers[1]);
+			int green = Integer.parseInt(numbers[2]);
+					
+			Color savedColor = new Color(red,blue,green);
+			
+			_scrabble.getPlayer(i).setColor(savedColor);
 		}
 	}
 
@@ -99,8 +113,8 @@ public class LoadGame {
 		
 	
 		
-		}
+	}
 
-}
+
 
 
