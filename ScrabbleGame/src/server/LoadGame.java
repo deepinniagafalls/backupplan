@@ -19,8 +19,9 @@ public class LoadGame {
 	private String[] _tokens;
 
 	
-	public LoadGame() throws IOException{
+	public LoadGame(ServerCode scrabble) throws IOException{
 
+		_scrabble = scrabble;
 		JFrame jf = new JFrame();
 		FileDialog chooser = new FileDialog(jf,"Save your file",FileDialog.LOAD);
 		chooser.setDirectory("C:\\"); chooser.setFile("*.txt");
@@ -93,6 +94,18 @@ public class LoadGame {
 		}
 	}
 
+	
+	public void updateInventory(){
+		Inventory inv = _scrabble.getInventory();
+		String inventoryData = _tokens[4];
+		String allTiles = inventoryData.replace("[", "");
+		allTiles = allTiles.replace("]", "");
+		inv.resetTileBag();
+		for(int i = 0; i< allTiles.length();i++){
+			
+		}
+		
+	}
 	/*
 		String[] tokens = s.split(delims);
 		
