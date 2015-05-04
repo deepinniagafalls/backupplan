@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -13,6 +14,7 @@ public class LoadGame {
 	
 	private String _fileToRead;
 	private Scrabble _scrabble;
+	private String[] _tokens;
 	
 	public LoadGame() throws IOException{
 
@@ -28,24 +30,24 @@ public class LoadGame {
 		
 		String s = (bw.readLine());
 		String delims = "%";
-		String[] tokens = s.split(delims);
+		_tokens = s.split(delims);
 		
-		for (int i = 0; i < tokens.length; i++){
+		for (int i = 0; i < _tokens.length; i++){
 			
-		    System.out.println(tokens[i]);
+		    System.out.println(_tokens[i]);
 		    System.out.print("....................");
 		    
 		}
 		
-		String boardRep = tokens[10];
+		updatePlayers();
+		updateBoard();
 		
-		//System.out.println(boardRep);
 		
-		
-		Scrabble _scrabble = new Scrabble(1);
+		}
+	
+	public void updateBoard(){
+		String boardRep = _tokens[5];
 		Board board = _scrabble.getBoard();
-		
-		
 		for(int row = 0; row < 20; row ++){
 			for(int col = 0; col < 20; col ++){
 				if(boardRep.charAt((row*20)+col) == '-'){
@@ -60,13 +62,19 @@ public class LoadGame {
 						board.setTile(new Tile(i,2),row,col);
 					}
 					else{
-						board.setTile(new Tile(i,5),row,col);
-					}
-				}
-			}
+						board.setTile(new Tile(i,5),row,col);}}}}}
+	
+	public void updatePlayers(){
+		String playerRep = _tokens[2];
+		String [] playerList = playerRep.split(";");
+		int numOfPlayers = playerList.length;
+		_scrabble = new Scrabble(numOfPlayers);
+		for(int i = 0; i < numOfPlayers; i++){
+			String[] info = playerList[i].split(",");
+			_scrabble.getPlayer(i).setName(info[0]);
+			_scrabble.getPlayer(i).setColor(info[1]);
 		}
-		
-		}
+	}
 }
 
 

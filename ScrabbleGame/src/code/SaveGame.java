@@ -30,38 +30,41 @@ public class SaveGame {
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
 			BufferedWriter bw = new BufferedWriter(fw);
 			
-			bw.write("%");
-			String boardsize = "20 20";
 
-			bw.write("%");
+			String boardsize = "20 20";
 			bw.write(boardsize);
+			bw.write("\r\n");
 			
-			bw.write("%");
 			String content = "/part2/res/words.txt";
 			bw.write(content);
-			bw.write("%");
+			bw.write("\r\n");
 			
 			for(int i = 0; i <_scrabble.getNumberofPlayers(); i = i + 1 ){
 				Player p = _scrabble.getPlayer(i);
-				bw.write("[" +p.getColor() + ", " + p.getScore() + "]");
-				bw.write("%");
+				
+				bw.write("[" + p.getName() + "," +p.getColor() + "," + p.getScore());
+				bw.write(",");
 				bw.write("[");
 				for(int j = 0; j <12; j = j+1){
 					bw.write(p.getTileRack().getTile(j).getChar());
 				}
 				bw.write("]");
-				bw.write("%");
+				bw.write("]");
+				if(i < _scrabble.getNumberofPlayers()-1){
+					bw.write(";");
+				}
 			}
 			
-			int turn = _scrabble.getTurn();
+			bw.write("\r\n");
 			
-			bw.write(" " + turn);
-			bw.write("%");
+			int turn = _scrabble.getTurn();
+			bw.write(turn);
+			bw.write("\r\n");
 			
 			for(int i = 0; i < _scrabble.getInventory().getSize(); i = i + 1 ){
 				bw.write("[" + _scrabble.getInventory().getTile(i).getChar() + "]");
 			}
-			bw.write("%");
+			bw.write("\r\n");
 			
 			for(int i = 0; i<20; i = i + 1){
 				for(int j = 0; j<20; j = j +1){

@@ -35,7 +35,7 @@ public class Dialog extends JFrame {
 		_scrabble = scrabble;
 	    JFrame frame = new JFrame();   JPanel p = new JPanel();
 		p.add(open);p.add(save);p.add(pass);
-		open.addActionListener(new OpenL());save.addActionListener(new SaveL());pass.addActionListener(new PassT(name, path));
+		open.addActionListener(new OpenL());save.addActionListener(new SaveL());pass.addActionListener(new PassT());
 		label1 = new JLabel("Turn: " + "Mike",null,JLabel.CENTER);
 		
 		
@@ -53,25 +53,28 @@ public class Dialog extends JFrame {
 		p.setVisible(true);
 		frame.pack();
 		frame.setVisible(true);
-		
-		
-		
-		
 	}
 
 
 	public class OpenL implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-				new LoadGame();
+				try {
+					new LoadGame();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 		}
 	}
 
 	private class SaveL implements ActionListener {
 		
 		public void actionPerformed(ActionEvent e) {
-			
-			new SaveGame();
+			try {
+				new SaveGame(_scrabble);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 	}
 
@@ -82,20 +85,15 @@ public class Dialog extends JFrame {
 	}
 
 	private class PassT implements ActionListener {
-		private ArrayList<String> _name;
-		private String _path = "";
-		public PassT(ArrayList<String> name, String path){
-			_name = name;
-		}
-		
-		public PassT(String path){
-			_path = path;
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			_scrabble.switchTurn();
 		}
 
-		public void actionPerformed(ActionEvent e) {
-			
+		
 		}
-	}
+
 	
 
 	public int scoreHelper(char c){

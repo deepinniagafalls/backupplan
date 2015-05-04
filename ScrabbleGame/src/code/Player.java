@@ -47,7 +47,9 @@ public class Player {
 		public Tile getTile(int i){return _rack.get(i);}}
 		public int getScore(){return _score;}
 		public String getName(){return _name;}
+		public void setName(String name){_name = name;}
 		public Color getColor(){return _color;}
+		public void setColor(Color color){_color = color;}
 		public TileRack getTileRack(){return  _tr;}
 }
 
