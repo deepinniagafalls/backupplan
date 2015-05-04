@@ -2,6 +2,9 @@ package code;
 import java.util.ArrayList;
 import java.util.Random;
 
+import sever.Scrabble;
+import sever.Tile;
+
 public class Inventory {
 	private ArrayList<Tile> _tileBag;
 	private Scrabble _scrabble;

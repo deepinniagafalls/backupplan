@@ -12,6 +12,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 import sever.Scrabble;
+import sever.Tile;
 
 public class LoadGame {	
 	
@@ -21,8 +22,9 @@ public class LoadGame {
 	private String[] _tokens;
 
 	
-	public LoadGame() throws IOException{
+	public LoadGame(Scrabble scrabble) throws IOException{
 
+		_scrabble = scrabble;
 		JFrame jf = new JFrame();
 		FileDialog chooser = new FileDialog(jf,"Save your file",FileDialog.LOAD);
 		chooser.setDirectory("C:\\"); chooser.setFile("*.txt");
