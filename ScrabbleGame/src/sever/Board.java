@@ -13,6 +13,8 @@ public class Board {
 	private Random _rand;
 	private Scrabble _scrabble;
 	
+	private Tile _currentTile;
+	
 	public Board(Scrabble s){
 		_rand = new Random();
 		_scrabble = s;
@@ -62,4 +64,10 @@ public class Board {
 	}
 	}
 	
+	public void boardClicked(int row,int col){
+		if(_currentTile != null){
+			setTile(_currentTile,row,col);
+		}
+		
+	}
 }

@@ -11,6 +11,8 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 
+import sever.Board;
+import sever.Inventory;
 import sever.Scrabble;
 import sever.Tile;
 
