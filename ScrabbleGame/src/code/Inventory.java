@@ -32,4 +32,24 @@ public class Inventory {
 	
 	public Tile getTile(int i){
 		return _tileBag.get(i);}
+	
+	public void resetTileBag(){
+		_tileBag = new ArrayList<Tile>();
+	}
+	
+	public void addTile(char i){
+		int pointvalue;
+	
+		if ((i == 'A')||(i == 'E')||(i == 'I')||(i == 'O')||(i =='U')){
+			pointvalue = 1;
+		}
+		else if (i == 'Y'){
+			pointvalue = 2;
+		}
+		else{
+			pointvalue = 5;
+		}
+		Tile t = new Tile(i,pointvalue);
+		_tileBag.add(t);
+	}
 }

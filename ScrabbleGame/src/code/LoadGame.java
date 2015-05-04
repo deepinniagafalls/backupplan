@@ -92,6 +92,18 @@ public class LoadGame {
 		}
 	}
 
+	
+	public void updateInventory(){
+		Inventory inv = _scrabble.getInventory();
+		String inventoryData = _tokens[4];
+		String allTiles = inventoryData.replace("[", "");
+		allTiles = allTiles.replace("]", "");
+		inv.resetTileBag();
+		for(int i = 0; i< allTiles.length();i++){
+			
+		}
+		
+	}
 	/*
 		String[] tokens = s.split(delims);
 		
