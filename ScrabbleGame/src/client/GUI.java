@@ -18,11 +18,11 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import sever.Board;
-import sever.LoadGame;
-import sever.Player;
-import sever.SaveGame;
-import sever.Scrabble;
+import server.Board;
+import server.LoadGame;
+import server.Player;
+import server.SaveGame;
+import server.Scrabble;
 
 public class GUI extends JFrame{
 

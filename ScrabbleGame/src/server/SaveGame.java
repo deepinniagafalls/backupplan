@@ -1,4 +1,4 @@
-package sever;
+package server;
 import java.awt.FileDialog;
 import java.io.BufferedWriter;
 import java.io.File;

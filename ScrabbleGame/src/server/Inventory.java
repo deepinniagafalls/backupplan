@@ -1,9 +1,9 @@
-package sever;
+package server;
 import java.util.ArrayList;
 import java.util.Random;
 
-import sever.Scrabble;
-import sever.Tile;
+import server.Scrabble;
+import server.Tile;
 
 public class Inventory {
 	private ArrayList<Tile> _tileBag;

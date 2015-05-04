@@ -11,10 +11,10 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 
-import sever.Board;
-import sever.Inventory;
-import sever.Scrabble;
-import sever.Tile;
+import server.Board;
+import server.Inventory;
+import server.Scrabble;
+import server.Tile;
 
 public class LoadGame {	
 	

@@ -1,4 +1,4 @@
-package sever;
+package server;
 
 public class ServerDriver {
 
