@@ -31,6 +31,7 @@ public class GUI extends JFrame{
 	private Scrabble _scrabble;
 	private ArrayList<RackGUI> _rackGUI;
 	private DialogBox _dialogBox;
+	private GUI _gui;
 	
 	public GUI(Scrabble s){
 		// try {
@@ -38,6 +39,7 @@ public class GUI extends JFrame{
 	       // } catch(Exception e) {
 	      //      e.printStackTrace();
 	      //  } 
+		_gui = this;
 		_scrabble = s;	_b = _scrabble.getBoard();
 		JFrame frame = new JFrame("Scrabble");	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1100, 1100);	GridLayout grid = new GridLayout(20, 20, 0, 0);	frame.setLayout(grid);
@@ -99,7 +101,8 @@ public class GUI extends JFrame{
 		}
 		
 		public void actionPerformed(ActionEvent e) {
-			
+			_scrabble.getBoard().boardClicked(_row,_col);
+			_gui.update();
 		}
 	}
 
