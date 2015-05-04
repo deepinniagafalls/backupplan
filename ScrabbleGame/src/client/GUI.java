@@ -87,8 +87,9 @@ public class GUI extends JFrame{
 		}
 		
 		public void actionPerformed(ActionEvent e) {
-			
+			_scrabble.getBoard().boardClicked(_row,_col);
 		}
+		
 	}
 	
 	private class BoardTileGUI extends JButton{
