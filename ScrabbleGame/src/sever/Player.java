@@ -51,5 +51,8 @@ public class Player {
 		public Color getColor(){return _color;}
 		public void setColor(Color color){_color = color;}
 		public TileRack getTileRack(){return  _tr;}
+		public void boardClicked(){
+			
+		}
 }
 

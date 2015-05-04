@@ -41,6 +41,7 @@ public class Board {
 	public int getWordMultiplier(int index){return _wordMultipliers[index];}
 	public void setLetterMultiplier(int index){_letterMultipliers[index] = 1;}
 	public void setWordMultipliers(int index){_wordMultipliers[index] = 1;}
+	public void setCurrentTile(Tile t){_currentTile = t;}
 	
 	public void addMultipliers(int start, int end, int number){
 		for(int i=start; i<end; i++){
