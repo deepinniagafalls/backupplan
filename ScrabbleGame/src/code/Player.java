@@ -30,7 +30,7 @@ public class Player {
 	
 
 	
-	class TileRack {
+	public class TileRack {
 		
 		private ArrayList<Tile> _rack;
 	
