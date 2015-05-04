@@ -34,6 +34,7 @@ public class Player {
 	public class TileRack {
 		
 		private ArrayList<Tile> _rack;
+		private int _lastClick;
 	
 		public TileRack(){
 			_rack = new ArrayList<Tile>();
@@ -54,9 +55,19 @@ public class Player {
 		
 		
 		public void boardClicked(int index){
+			_lastClick = index;
 			if(_scrabble.getBoard().getCurrentTile() != null){
-				
+				for(int i = 0; i < _rack.size(); i++){
+					if(_rack.get(i) == null){
+						Tile temp = _rack.get(index);
+						_rack.set(index, _rack.get(i,_scrabble.getBoard().getCurrentTile()));
+						_rack.set(i, )
+						_scrabble.getBoard().getCurrentTile();
+						
+					}
+				}
 			}
+			
 
 		}
 	}
