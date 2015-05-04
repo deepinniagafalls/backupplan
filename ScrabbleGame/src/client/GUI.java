@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import alphonce.i.IServer;
 import server.Board;
 import server.LoadGame;
 import server.Player;
@@ -33,6 +34,7 @@ public class GUI extends JFrame implements IClient, Runnable {
 	private ArrayList<RackGUI> _rackGUI;
 	private DialogBox _dialogBox;
 	private GUI _gui;
+	private someInterfaceStuff.IServer _server; // use this instead of _scrabble!!
 	
 	public GUI(ServerCode s){
 		// try {
