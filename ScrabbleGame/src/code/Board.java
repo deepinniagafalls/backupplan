@@ -2,7 +2,9 @@ package code;
 import java.util.ArrayList;
 import java.util.Random;
 
-import code.Tile;
+import sever.Scrabble;
+import sever.Tile;
+
 
 public class Board {
 
