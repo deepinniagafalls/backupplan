@@ -25,8 +25,9 @@ public class Player {
 	}
 	public Color getC(){
 		return _color;
-		
-	}
+		}
+	
+	public TileRack getTileRack(){return  _tr;}
 	
 
 	
@@ -44,15 +45,17 @@ public class Player {
 		
 		public Tile removeTile(int i){return _rack.remove(i);}
 		public int getSize() {return _rack.size();}
-		public Tile getTile(int i){return _rack.get(i);}}
+		public Tile getTile(int i){return _rack.get(i);}
 		public int getScore(){return _score;}
 		public String getName(){return _name;}
 		public void setName(String name){_name = name;}
 		public Color getColor(){return _color;}
 		public void setColor(Color color){_color = color;}
-		public TileRack getTileRack(){return  _tr;}
-		public void boardClicked(){
-			
+		
+		
+		public void boardClicked(int index){
+			//if(_scrabble.getBoard().getCurrent())
 		}
+	}
 }
 

@@ -86,13 +86,13 @@ public class GUI extends JFrame implements IClient, Runnable {
 	}
 
 	private class RackTileGUI extends JButton {
-		private int _row,_col,_letterMult,_wordMult;
+		private int _row,_col,_letterMult,_wordMult,_index;
 		private RackTileGUI(int row, int col, int letterMult, int wordMult){
 			_row = row; _col = col; _letterMult = letterMult; _wordMult = wordMult;
 		}
 		
 		public void actionPerformed(ActionEvent e) {
-			_scrabble.getPlayer(_scrabble.getTurn()).getTileRack().boardClicked(_row,_col);
+			_scrabble.getPlayer(_scrabble.getTurn()).getTileRack().boardClicked(_index);
 		}
 	}
 	
