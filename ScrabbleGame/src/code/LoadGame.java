@@ -78,6 +78,7 @@ public class LoadGame {
 		}
 	}
 
+	/*
 		String[] tokens = s.split(delims);
 		
 		for (int i = 0; i < tokens.length; i++){
@@ -94,27 +95,9 @@ public class LoadGame {
 		
 		//Scrabble _scrabble = new Scrabble(1);
 		Board board = _scrabble.getBoard();
+		*/
 		
-		
-		for(int row = 0; row < 20; row ++){
-			for(int col = 0; col < 20; col ++){
-				if(boardRep.charAt((row*20)+col) == '-'){
-					board.setTile(null,row,col);
-				}
-				else{
-					char i = boardRep.charAt((row*20)+col);
-					if ((i == 'A')||(i == 'E')||(i == 'I')||(i == 'O')||(i =='U')){
-						board.setTile(new Tile(i,1),row,col);
-					}
-					else if(i == 'Y'){
-						board.setTile(new Tile(i,2),row,col);
-					}
-					else{
-						board.setTile(new Tile(i,5),row,col);
-					}
-				}
-			}
-		}
+	
 		
 		}
 
