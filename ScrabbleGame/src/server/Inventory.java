@@ -2,14 +2,14 @@ package server;
 import java.util.ArrayList;
 import java.util.Random;
 
-import server.Scrabble;
+import server.ServerCode;
 import server.Tile;
 
 public class Inventory {
 	private ArrayList<Tile> _tileBag;
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 	
-	public Inventory(Scrabble s){
+	public Inventory(ServerCode s){
 		_scrabble = s;
 		_tileBag = new ArrayList<Tile>();
 		fillBag();}

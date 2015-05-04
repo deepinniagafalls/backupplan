@@ -23,14 +23,14 @@ public class Dialog extends JFrame {
 	private JTextField filename = new JTextField(), dir = new JTextField();
 	private JButton open = new JButton("Open"), save = new JButton("Save");
 	private JButton pass = new JButton("Pass");
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 	private int _currentTurn,_numberOfPlayers;
 	private int _c = 0;
 	private JLabel label1;
 	private boolean _isPlayerFrameStillEmpty = false;
 	private ArrayList<String> name = new ArrayList<String>();
 
-	public Dialog(Scrabble scrabble){
+	public Dialog(ServerCode scrabble){
 		String path = "Documents/words.txt";
 		_scrabble = scrabble;
 	    JFrame frame = new JFrame();   JPanel p = new JPanel();

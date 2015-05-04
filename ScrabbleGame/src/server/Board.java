@@ -11,11 +11,11 @@ public class Board {
 	private ArrayList<Integer> _letterIndexRepeats = new ArrayList<Integer>();
 	private ArrayList<Integer> _wordIndexRepeats = new ArrayList<Integer>();
 	private Random _rand;
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 	
 	private Tile _currentTile;
 	
-	public Board(Scrabble s){
+	public Board(ServerCode s){
 		_rand = new Random();
 		_scrabble = s;
 		_board = new Tile[20][20];

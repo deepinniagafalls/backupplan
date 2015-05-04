@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 public class LoadGame {	
 	
 	private String _fileToRead;
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 
 	private String[] _tokens;
 
@@ -71,7 +71,7 @@ public class LoadGame {
 		String playerRep = _tokens[2];
 		String [] playerList = playerRep.split(";");
 		int numOfPlayers = playerList.length;
-		_scrabble = new Scrabble(numOfPlayers);
+		_scrabble = new ServerCode(numOfPlayers);
 		for(int i = 0; i < numOfPlayers; i++){
 			String[] info = playerList[i].split(",");
 			_scrabble.getPlayer(i).setName(info[0]);

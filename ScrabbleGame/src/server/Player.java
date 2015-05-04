@@ -7,11 +7,11 @@ public class Player {
 	private String _name;
 	private TileRack _tr;
 	private Inventory _inv;
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 	private int _score;
 	private Color _color;
 	
-	public Player(Scrabble s, String name){
+	public Player(ServerCode s, String name){
 		_name = name;
 		_scrabble = s;
 		_inv = _scrabble.getInventory();

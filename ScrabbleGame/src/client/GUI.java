@@ -22,18 +22,19 @@ import server.Board;
 import server.LoadGame;
 import server.Player;
 import server.SaveGame;
-import server.Scrabble;
+import server.ServerCode;
+import someInterfaceStuff.IClient;
 
-public class GUI extends JFrame{
+public class GUI extends JFrame implements IClient, Runnable {
 
 	private JButton[][] _boardOfButtons = new BoardTileGUI[20][20];
 	private Board _b;
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 	private ArrayList<RackGUI> _rackGUI;
 	private DialogBox _dialogBox;
 	private GUI _gui;
 	
-	public GUI(Scrabble s){
+	public GUI(ServerCode s){
 		// try {
 	         //   UIManager.setLookAndFeel(new com.sun.java.swing.plaf.motif.MotifLookAndFeel());
 	       // } catch(Exception e) {
@@ -134,14 +135,14 @@ public class GUI extends JFrame{
 			private JTextField filename = new JTextField(), dir = new JTextField();
 			private JButton open = new JButton("Open"), save = new JButton("Save");
 			private JButton pass = new JButton("Pass");
-			private Scrabble _scrabble;
+			private ServerCode _scrabble;
 			private int _currentTurn,_numberOfPlayers;
 			private int _c = 0;
 			private JLabel label1;
 			private boolean _isPlayerFrameStillEmpty = false;
 			private ArrayList<String> name = new ArrayList<String>();
 
-			private DialogBox(Scrabble scrabble){
+			private DialogBox(ServerCode scrabble){
 				String path = "Documents/words.txt";
 				_scrabble = scrabble;
 			    JFrame frame = new JFrame();   JPanel p = new JPanel();
@@ -220,6 +221,12 @@ public class GUI extends JFrame{
 					return 2;
 				}
 				return 0;
+			}
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
 			}
 			
 

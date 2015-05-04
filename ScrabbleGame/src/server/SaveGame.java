@@ -11,10 +11,10 @@ import javax.swing.UIManager;
 
 public class SaveGame {
 	
-		private Scrabble _scrabble;
+		private ServerCode _scrabble;
 		private String _fileToWriteTo;
 		
-		public SaveGame(Scrabble s) throws IOException{
+		public SaveGame(ServerCode s) throws IOException{
 
 			_scrabble = s;
 			JFrame jf = new JFrame();

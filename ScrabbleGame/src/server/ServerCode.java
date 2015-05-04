@@ -2,15 +2,17 @@ package server;
 
 import java.util.ArrayList;
 
-public class Scrabble {
+import someInterfaceStuff.IServer;
+
+public class ServerCode implements IServer, Runnable {
 
 	private int _numOfPlayers, _turn;
 	private ArrayList<Player> _players;
 	private Board  _board;
 	private Inventory _inv;
-	private Scrabble _scrabble;
+	private ServerCode _scrabble;
 	
-	public Scrabble(int numOfPlayers){
+	public ServerCode(int numOfPlayers){
 		_turn = 0;
 		_scrabble = this;
 		_numOfPlayers = numOfPlayers;
@@ -28,4 +30,10 @@ public class Scrabble {
 	public Inventory getInventory(){return _inv;}
 	public int getNumberofPlayers(){return _numOfPlayers;}
 	public Player getPlayer(int i){return _players.get(i);}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
 }
