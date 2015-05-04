@@ -1,8 +1,6 @@
-package code;
+package sever;
 import java.util.ArrayList;
 import java.util.Random;
-
-import code.Tile;
 
 public class Board {
 

@@ -1,4 +1,4 @@
-package code;
+package sever;
 
 import java.awt.FileDialog;
 import java.io.BufferedReader;
@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.Color;
+
 import javax.swing.JFrame;
 
 public class LoadGame {	

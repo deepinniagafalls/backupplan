@@ -2,8 +2,8 @@ package client;
 
 import java.io.IOException;
 
-import code.SaveGame;
-import code.Scrabble;
+import sever.SaveGame;
+import sever.Scrabble;
 
 public class Driver {
 	
