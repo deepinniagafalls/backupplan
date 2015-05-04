@@ -1,6 +1,9 @@
-package code;
+package client;
 
 import java.io.IOException;
+
+import code.SaveGame;
+import code.Scrabble;
 
 public class Driver {
 	

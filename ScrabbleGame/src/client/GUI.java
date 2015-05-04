@@ -1,4 +1,4 @@
-package code;
+package client;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
@@ -16,17 +16,15 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.UIManager;
 import javax.swing.*;
 
-public class GUI extends JFrame {
+import code.Board;
+import code.LoadGame;
+import code.Player;
+import code.SaveGame;
+import code.Scrabble;
+
+public class GUI extends JFrame{
 
 	private JButton[][] _boardOfButtons = new BoardTileGUI[20][20];
 	private Board _b;
