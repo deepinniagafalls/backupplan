@@ -1,4 +1,4 @@
-package inteface;
+package someInterfaceStuff;
 
 import java.rmi.Remote;
 
