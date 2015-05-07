@@ -2,6 +2,7 @@ package client;
 
 import java.io.IOException;
 
+import server.LoadGame;
 import server.SaveGame;
 import server.ServerCode;
 
@@ -12,7 +13,7 @@ public class Driver {
 		GUI g = new GUI(s);
 		g.update();
 		//SaveGame sg = new SaveGame(s);
-		//LoadGame lg = new LoadGame();
+		LoadGame lg = new LoadGame(s);
 	}
 	
 	
