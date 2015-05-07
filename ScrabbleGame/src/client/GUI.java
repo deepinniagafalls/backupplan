@@ -93,6 +93,7 @@ public class GUI extends JFrame implements IClient, Runnable {
 		public void actionPerformed(ActionEvent e) {
 			_scrabble.getPlayer(_scrabble.getTurn()).getTileRack().boardClicked(_index);
 			_gui.update();
+			System.out.println("Got it");
 		}
 	}
 	

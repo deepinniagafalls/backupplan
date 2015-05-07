@@ -55,6 +55,8 @@ public class Player {
 		
 		
 		public void boardClicked(int index){
+			
+			
 			/*
 			if(_firstTime == true){
 				_firstTime = false;
@@ -74,6 +76,7 @@ public class Player {
 				_rack.set(index, null);
 			}	
 			else if(currentTile != null){
+				System.out.println("HEYY");
 				_lastClick = _currentClick;
 				_currentClick = index;
 			

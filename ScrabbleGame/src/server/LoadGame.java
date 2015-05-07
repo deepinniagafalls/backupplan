@@ -56,6 +56,7 @@ public class LoadGame {
 			for(int col = 0; col < 20; col ++){
 				if(boardRep.charAt((row*20)+col) == '-'){
 					board.setTile(null,row,col);
+					
 				}
 				else{
 					char i = boardRep.charAt((row*20)+col);
