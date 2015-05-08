@@ -17,7 +17,7 @@ public class ServerDriver {
 			System.out.println("Security manager started");
 			if (System.getSecurityManager() == null) {
 				System.setSecurityManager(new SecurityManager());
-				System.out.println("Security manager started");
+				System.out.println("Security manager started!");
 			}
 	}
 	}
